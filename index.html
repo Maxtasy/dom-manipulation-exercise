@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        THE TITLE OF YOUR WEBPAGE
+    </h1>
+    <div id="container">
+        <div class="content">
+            This is the glorious text-content!
+        </div>
+    </div>
+    <!--Events: Method 1-->
+    <button onclick="alert('Hello World')">Click Me</button>
+    <!--Events: Method 2-->
+    <button id="btn">Click Me</button>
+    <!--Events: Method 3-->
+    <button id="btn3">Click Me</button>
+    <script>
+        const container = document.querySelector("#container");
+
+        // 1.) append a <p> with red text inside container
+        const p = document.createElement("p");
+
+        p.style.color = "red";
+        p.textContent = "Hey I’m red!";
+
+        container.appendChild(p);
+
+        // 2.) append a <h3> with blue text inside container
+        const headline3 = document.createElement("h3");
+
+        headline3.style.color = "blue";
+        headline3.textContent = "I’m a blue h3!";
+
+        container.appendChild(headline3);
+
+        // 3.1) append a <div> with black border and pink background inside container
+        const newDiv = document.createElement("div");
+
+        newDiv.style.background = "pink";
+        newDiv.style.border = "solid black";
+
+        container.appendChild(newDiv);
+
+        // 3.2) append a <h1> inside this new div
+        const headline1 = document.createElement("h1");
+
+        headline1.textContent = "I’m in a div";
+
+        newDiv.appendChild(headline1);
+
+        // 3.3) append a <p> inside this new div
+        const p2 = document.createElement("p");
+
+        p2.textContent = "ME TOO!";
+
+        newDiv.appendChild(p2);
+
+        // Events
+        var btn = document.querySelector('#btn');
+        btn.onclick = () => alert("Hello World");
+
+        var btn3 = document.querySelector('#btn3');
+        btn3.addEventListener('click', () => {
+            alert("Hello World");
+        });
+    </script>
+</body>
+</html>
